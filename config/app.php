@@ -156,6 +156,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Vendors
+         */
+        'Aloha\Twilio\Support\Laravel\ServiceProvider',
     ],
 
     /*
@@ -201,7 +205,13 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
+        'Twilio'    => 'Aloha\Twilio\Support\Laravel\Facade',
+        
+        'Lead'          => App\Models\Lead\Lead::class,
+        'LeadModel'     => App\Models\Lead\LeadModel::class,
+        
+        'LeadController'    => App\Http\Controllers\LeadController::class,
+        
     ],
 
 ];

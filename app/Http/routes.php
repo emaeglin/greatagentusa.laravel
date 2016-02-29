@@ -11,8 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::any('/', function () {
+    if (Request::get('Controller') === NULL) {
+        return view('index');
+    } elseif (!class_exists(Request::get('Controller'))) {
+        return view('index');
+    } else {
+        $app = app();
+        $controller = $app->make(Request::get('Controller'));
+        return $controller->callAction(Request::get('Method'), array());
+    }
 });
 
 /*
