@@ -155,7 +155,15 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        
+        /*
+         * Models
+         */
+        App\Models\Lead::class,
+        App\Models\LeadCall::class,
+        App\Models\User::class,
+        
+        
         /*
          * Vendors
          */
@@ -207,11 +215,9 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Twilio'    => 'Aloha\Twilio\Support\Laravel\Facade',
         
-        'Lead'          => App\Models\Lead\Lead::class,
-        'LeadModel'     => App\Models\Lead\LeadModel::class,
-        
-        'LeadController'    => App\Http\Controllers\LeadController::class,
-        
+        'Lead'      => App\Models\Lead::class,
+        'LeadCall'  => App\Models\LeadCall::class,
+        'User'      => App\Models\User::class,
     ],
 
 ];
